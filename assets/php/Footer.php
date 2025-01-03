@@ -44,17 +44,18 @@
 
     let hamburgerDivs = document.querySelectorAll('.hamburger div');
     hamburgerDivs = [...hamburgerDivs]
-    console.log(hamburgerDivs)
 
     let logoLight = document.querySelector('#logo-light')
     let logoDark = document.querySelector('#logo-dark')
 
+    let header = document.querySelector('header')
 
     // Function to check scroll position and toggle the background class
     function toggleNavbarBackground() {
         let screenWidth = window.innerWidth;
         if (window.scrollY > 20) {
             navbar.classList.add('scrolled'); // Add the 'scrolled' class when scrolling
+            navbar.classList.remove('not-scrolled')
             // Change the color of all <a> elements to black
             links.forEach(link => {
                 if (screenWidth > 1080) {
@@ -71,6 +72,13 @@
                 div.classList.add('hamburger-scrolled')
                 div.classList.remove('hamburger-not-scrolled')
             })
+
+            if (`<?= $current_page ?>` == 'index.php') {
+                header.classList.remove('bg-transparent')
+            } else {
+                header.classList.remove('not-scrolled-not-home')
+
+            }
         } else {
             navbar.classList.remove('scrolled'); // Remove the 'scrolled' class when at the top
 
@@ -85,6 +93,28 @@
                 div.classList.remove('hamburger-scrolled')
                 div.classList.add('hamburger-not-scrolled')
             })
+
+            if (`<?= $current_page ?>` != 'index.php') {
+                header.classList.add('bg-white not-scrolled-not-home')
+                // Change the color of all <a> elements to black
+                links.forEach(link => {
+                    if (screenWidth > 1080) {
+                        link.classList.add('a-scrolled') // Set color to black
+                    } else {
+                        link.classList.remove('a-scrolled') // Set color to black
+                    }
+                });
+
+                logoLight.classList.add('d-none')
+                logoDark.classList.remove('d-none')
+
+                hamburgerDivs.forEach(div => {
+                    div.classList.add('hamburger-scrolled')
+                    div.classList.remove('hamburger-not-scrolled')
+                })
+            } else {
+                header.classList.add('not-scrolled')
+            }
         }
     }
 
@@ -119,21 +149,6 @@
         });
     }
 
-
-    // $('#nav_check').click(function() {
-    //     // Check if the display value of #overlay is 'block'
-    //     if ($('#overlay').css('display') === 'block') {
-    //         $('#overlay').css('display', 'none')
-    //         $('#nav_check').prop('checked', false)
-    //     } else {
-    //         $('#overlay').css('display', 'block')
-    //     }
-    // })
-
-    // $('#overlay').click(function(e) {
-    //     $('#overlay').css('display', 'none')
-    //     $('#nav_check').prop('checked', false)
-    // })
     document.getElementById("nav_check").addEventListener("click", function() {
         var overlay = document.getElementById("overlay");
         var navCheck = document.getElementById("nav_check");

@@ -1,6 +1,7 @@
 <?php
 // Get the current page's name
 $current_page = basename($_SERVER['PHP_SELF']); // This will return the current page's filename
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +22,7 @@ $current_page = basename($_SERVER['PHP_SELF']); // This will return the current 
     <button id="scrollToTopBtn" class="scroll-to-top-btn" style="padding: 12px 10px;">
         <i class='bx bx-up-arrow-alt fs-1 fw-bolder text-center d-block'></i>
     </button>
-    <header>
+    <header class="<?= $current_page == 'index.php' ? 'not-scrolled' : 'not-scrolled-not-home' ?>">
         <div class="logo">
             <img src="./assets/img/Logo-Ravago.png" alt="log image" id="logo-light">
             <img src="./assets/img/Logo-Ravago black.png" alt="log image" id="logo-dark" class="d-none">
@@ -33,7 +34,7 @@ $current_page = basename($_SERVER['PHP_SELF']); // This will return the current 
                     <a href="index.php" class="<?= $current_page == 'index.php' ? 'active roboto-medium' : '' ?>">Home</a>
                 </li>
                 <li>
-                    <a href="about.php" class="<?= $current_page == 'about.php' ? 'active roboto-medium' : '' ?>">About Us</a>
+                    <a href="about.php" class="<?= $current_page == 'about.php' ? 'active roboto-medium' : '' ?>">About</a>
                 </li>
                 <li>
                     <a href="certifications.php" class="<?= $current_page == 'certifications.php' ? 'active roboto-medium' : '' ?>">Certifications</a>
@@ -42,13 +43,13 @@ $current_page = basename($_SERVER['PHP_SELF']); // This will return the current 
                     <a href="projects.php" class="<?= $current_page == 'projects.php' ? 'active roboto-medium' : '' ?>">Projects</a>
                 </li>
                 <li>
-                    <a href="services.php" class="<?= $current_page == 'services.php' ? 'active roboto-medium' : '' ?>">Rental Services</a>
+                    <a href="services.php" class="<?= $current_page == 'services.php' ? 'active roboto-medium' : '' ?>">Services</a>
                 </li>
                 <li>
                     <a href="careers.php" class="<?= $current_page == 'careers.php' ? 'active roboto-medium' : '' ?>">Careers</a>
                 </li>
                 <li>
-                    <a href="contact.php" class="<?= $current_page == 'contact.php' ? 'active roboto-medium' : '' ?>">Contact Us</a>
+                    <a href="contact.php" class="<?= $current_page == 'contact.php' ? 'active roboto-medium' : '' ?>">Contact</a>
                 </li>
             </ul>
         </nav>

@@ -279,7 +279,6 @@ header {
   justify-content: space-between;
   padding: 0 30px;
   margin: 0 auto;
-  position: fixed;
   top: 0;
   z-index: 1001;
   transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for background and shadow */
@@ -288,18 +287,35 @@ header {
 header.scrolled {
   background-color: white;
   box-shadow: 0 3px 30px rgba(90, 90, 90, 0.2); /* Optional: add a subtle shadow to the navbar when scrolled */
+  position: fixed;
+}
+
+header.not-scrolled {
+  background-color: transparent;
+  box-shadow: none;
+  position: fixed;
+}
+
+header.not-scrolled-not-home {
+  position: sticky;
+  box-shadow: 0 1px 1px rgba(90, 90, 90, 0.2);
 }
 
 header nav ul li a.a-scrolled {
   color: var(--pri-text-dark);
 }
 
-header nav ul li a.a-scrolled:hover {
+header nav ul li a.a-scrolled:not(.active):hover {
   color: var(--pri-text-yellow);
 }
 
 .logo {
   width: 200px;
+}
+
+.next-img {
+  position: relative;
+  width: 100%;
 }
 
 nav {
@@ -331,7 +347,7 @@ nav ul li a {
   padding: 8px 0px; Different padding for the last item
 } */
 
-nav ul li a:hover {
+nav ul li a:not(.active):hover {
   /* color: #ffbe00; */
   color: var(--pri-text-yellow);
 }
@@ -384,6 +400,23 @@ nav ul li a.active {
   position: relative;
   padding: 0 20px;
   user-select: none;
+}
+
+.hero-not-home {
+  background: transparent;
+  color: white; /* White text */
+  height: calc(100svh - var(--navbar-height-md));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 0 20px;
+  user-select: none;
+}
+
+.hero-content {
+  z-index: 2;
 }
 
 /* .hero::before {
@@ -498,6 +531,38 @@ h1 {
 
 /* ABOUT SECTION */
 /* ABOUT SECTION */
+
+.second-section-about {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 300px);
+  width: 100%;
+  max-width: 1220px;
+  padding: 80px 51px;
+  height: 100%;
+  gap: 50px;
+}
+
+.second-section-about-images {
+  display: flex;
+  flex-direction: column;
+}
+
+.third-section-about {
+  display: grid;
+  grid-template-columns: minmax(0, 300px) 1fr;
+  width: 100%;
+  max-width: 1220px;
+  padding: 80px 51px;
+  height: 100%;
+  gap: 50px;
+}
+
+.mission-list {
+  font-size: 18px;
+  color: var(--secon-text-dark);
+  margin-top: 20px;
+  line-height: 1.6;
+}
 
 /* FOOTER SECTION */
 .footer {
@@ -691,6 +756,18 @@ h1 {
   .services-cards {
     padding: 80px 51px;
   }
+
+  .second-section-about {
+    grid-template-columns: 1fr;
+  }
+
+  .second-section-about-images {
+    display: none;
+  }
+
+  .third-section-about {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media only screen and (max-width: 830px) {
@@ -787,6 +864,18 @@ h1 {
 
   .services-card {
     padding: 22px 15px;
+  }
+
+  .second-section-about {
+    padding: 50px 13px;
+  }
+
+  .hero-not-home {
+    height: calc(100svh - var(--navbar-height-sm));
+  }
+
+  .third-section-about {
+    padding: 50px 13px;
   }
 
   /* FOOTER SECTION */

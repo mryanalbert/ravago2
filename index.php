@@ -1,5 +1,4 @@
 <?php require_once './assets/php/Header.php' ?>
-
 <main>
     <!-- Hero Section -->
     <section id="hero" class="hero">
