@@ -5,7 +5,7 @@
         <!-- <img src="./assets/img/pexels-pixabay-532079.jpg" class="position-fixed w-100 object-fit-cover h-100" style="z-index: -2;" alt="pic"> -->
         <video src="./assets/vid/Philippines-Ravago 1500 Tons (Refinery Module Loadout)SPMT, SPT, Multiaxle, _Full-HD.mp4" class="position-fixed w-100 object-fit-cover h-100" style="z-index: -2;" alt="pic" muted autoplay loop></video>
         <div class="hero-overlay bg-black opacity-50 position-fixed top-0 start-0 object-fit-cover w-100 h-100" style="z-index: -1;"></div>
-        <div class="hero-content">
+        <div class="hero-content" style="margin-top:50px;">
             <h1 class="roboto-bold w-100 text-center mx-auto" style="max-width:850px;" data-aos="fade-up" data-aos-duration="800" data-aos-once="true">We Provide Best Construction Equipment For You</h1>
             <p class="mt-4" style="font-size: 20px;" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" data-aos-once="true">Your trusted partner for construction, mining, and industrial equipment rentals.</p>
             <a href="#services" id="hero-btn" class="btn border-0 rounded-0 mt-4 roboto-bold" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" data-aos-once="true">

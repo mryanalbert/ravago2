@@ -430,11 +430,6 @@ nav ul li a.active {
     z-index: 1;
 } */
 
-.hero-content {
-  z-index: 2;
-  margin-top: 50px;
-}
-
 h1 {
   font-size: 63px;
 }
@@ -562,6 +557,113 @@ h1 {
   color: var(--secon-text-dark);
   margin-top: 20px;
   line-height: 1.6;
+}
+
+.certifications-section {
+  width: 100%;
+  max-width: 1220px;
+  padding: 80px 51px;
+  height: 100%;
+  gap: 50px;
+}
+
+.iso-certs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.iso-cert {
+  @apply px-5 py-4 hover:shadow-md rounded-lg border-gray-100 border-2;
+  padding: 16px 20px;
+  border-radius: 0.5rem /* 8px */;
+  border: 2px solid #f3f4f6;
+}
+
+.iso-cert:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+.projects-wrapper {
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 80px 51px;
+  gap: 40px;
+  width: 100%;
+  max-width: 1220px;
+  height: 100%;
+  display: grid;
+  margin: auto;
+}
+.project-wrapper {
+  padding: 80px 51px;
+  width: 100%;
+  max-width: 1220px;
+  height: 100%;
+  margin: auto;
+}
+
+.project-wrapper img {
+  height: 550px;
+}
+
+/* The initial opacity and scaling state before hover */
+.group .bg-black {
+  opacity: 0.4; /* Initial opacity value */
+  transition: opacity 0.2s ease, transform 0.15s ease; /* Define the transition for both opacity and transform */
+}
+
+/* The hover state for the group container */
+.group:hover .bg-black {
+  opacity: 0.5; /* Change opacity on hover */
+}
+
+/* Hover effect for scaling the image */
+.group:hover .group-hover\:scale-105 {
+  transform: scale(1.05); /* Scale the image on hover */
+}
+
+/* Transition for scaling */
+.group .group-hover\:scale-105 {
+  transition: transform 0.15s ease-in-out; /* Transition for scaling */
+}
+
+#projects > p {
+  padding-top: 5rem;
+}
+
+.rental-services {
+  width: 100%;
+  max-width: 1220px;
+  padding: 80px 51px;
+  height: 100%;
+  gap: 50px;
+}
+
+.rental-services-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 3rem;
+  gap: 1.25rem;
+}
+
+.rental-service {
+  flex-grow: 1;
+  flex-basis: 16rem;
+}
+
+.project-title {
+  margin-top: 4rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  text-align: center;
+}
+
+.project-content {
+  margin-top: 2.5rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: var(--secon-text-dark);
 }
 
 /* FOOTER SECTION */
@@ -768,6 +870,21 @@ h1 {
   .third-section-about {
     grid-template-columns: 1fr;
   }
+
+  .iso-certs {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .projects-wrapper {
+    grid-template-columns: 1fr 1fr;
+    padding: 80px 51px;
+    gap: 30px;
+  }
+
+  .rental-services-wrapper {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media only screen and (max-width: 830px) {
@@ -782,6 +899,36 @@ h1 {
 
   .services-card {
     padding: 22px 27px;
+  }
+
+  .projects-wrapper {
+    grid-template-columns: 1fr 1fr;
+    padding: 40px 13px;
+    gap: 20px;
+  }
+
+  #projects > p {
+    padding-top: 40px;
+  }
+
+  .project-title {
+    padding: 0 13px;
+    margin-top: 2.5rem;
+  }
+
+  .project-content {
+    margin-top: 1.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .project-wrapper {
+    padding: 0;
+    padding-bottom: 50px;
+  }
+
+  .project-wrapper img {
+    height: 380px;
   }
 
   /* FOOTER SECTION */
@@ -831,10 +978,6 @@ h1 {
     font-size: 43px;
   }
 
-  .hero-content {
-    margin-top: 55px;
-  }
-
   .logo {
     width: 170px;
     margin: 0 16px;
@@ -876,6 +1019,23 @@ h1 {
 
   .third-section-about {
     padding: 50px 13px;
+  }
+
+  .certifications-section {
+    padding: 50px 13px;
+  }
+
+  .projects-wrapper {
+    gap: 10px;
+  }
+
+  .rental-services {
+    padding: 50px 13px;
+  }
+
+  .rental-services-wrapper {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 3.5rem;
   }
 
   /* FOOTER SECTION */

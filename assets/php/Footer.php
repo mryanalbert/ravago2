@@ -76,14 +76,14 @@
             if (`<?= $current_page ?>` == 'index.php') {
                 header.classList.remove('bg-transparent')
             } else {
-                header.classList.remove('not-scrolled-not-home')
-
+                header.classList.add('scrolled')
+                header.style.boxShadow = "0 3px 30px rgba(90, 90, 90, 0.2)"
             }
         } else {
-            navbar.classList.remove('scrolled'); // Remove the 'scrolled' class when at the top
+            navbar.classList.remove('scrolled');
 
             links.forEach(link => {
-                link.classList.remove('a-scrolled'); // Reset the color to the default
+                link.classList.remove('a-scrolled');
             });
 
             logoLight.classList.remove('d-none')
@@ -95,7 +95,9 @@
             })
 
             if (`<?= $current_page ?>` != 'index.php') {
-                header.classList.add('bg-white not-scrolled-not-home')
+                header.classList.add('bg-white')
+                header.style.boxShadow = "0 1px 1px rgba(90, 90, 90, 0.2)"
+
                 // Change the color of all <a> elements to black
                 links.forEach(link => {
                     if (screenWidth > 1080) {
